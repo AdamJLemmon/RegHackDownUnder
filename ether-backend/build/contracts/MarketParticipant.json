@@ -1,0 +1,27 @@
+{
+  "contract_name": "MarketParticipant",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "validateTx",
+      "outputs": [
+        {
+          "name": "isValid",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x6060604052346000575b6083806100176000396000f300606060405263ffffffff60e060020a600035041663402a791a81146022575b6000565b34600057602f6004356043565b604080519115158252519081900360200190f35b600060648210156051575060015b5b9190505600a165627a7a72305820d5bd8d01d8e7467f12b3378366b99297aacabeb1e2eb1912a3052640ea63e77e0029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1494649948618
+}

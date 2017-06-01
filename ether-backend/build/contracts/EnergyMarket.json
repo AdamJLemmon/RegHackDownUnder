@@ -1,0 +1,372 @@
+{
+  "contract_name": "EnergyMarket",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "producer",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "addStoredEnergy",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "storedEnergy",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "marketParticipants",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "consumer",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "depositEnergyTokens",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "producer",
+          "type": "address"
+        },
+        {
+          "name": "consumer",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferEnergy",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "tokenBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "addParticipant",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "producer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "AddStoredEnergy",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "producer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "consumer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "TransferEnergy",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "validtor",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "isValid",
+          "type": "bool"
+        }
+      ],
+      "name": "TxValidation",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x606060405234610000575b610569806100196000396000f300606060405236156100675763ffffffff60e060020a60003504166343dc660c811461006c57806351155cea1461008a5780636f5d7f7f146100b5578063cd94d93b146100e1578063db1f1c12146100ff578063eedc966a14610123578063fffefd911461014e575b610000565b3461000057610088600160a060020a036004351660243561015d565b005b34610000576100a3600160a060020a03600435166101ba565b60408051918252519081900360200190f35b34610000576100c56004356101cc565b60408051600160a060020a039092168252519081900360200190f35b3461000057610088600160a060020a03600435166024356101fc565b005b3461000057610088600160a060020a036004358116906024351660443561021f565b005b34610000576100a3600160a060020a03600435166103f6565b60408051918252519081900360200190f35b3461000057610088610408565b005b600160a060020a0382166000818152600160209081526040918290208054850190558151928352820183905280517f9ce3a340df23cde71d68006650a793d9a666a5a1e96de66020fc8d3d15305efd9281900390910190a15b5050565b60016020526000908152604090205481565b600281815481101561000057906000526020600020900160005b915054906101000a9004600160a060020a031681565b600160a060020a03821660009081526020819052604090208054820190555b5050565b600160a060020a0383166000908152600160205260408120548190839010806102605750600160a060020a0384166000908152602081905260409020548390105b1561026a57610000565b600160a060020a0380861660008181526001602090815260408083208054899003905593881682528190528281208054879003905590815290812080548501905591505b60025460ff831610156103a45760028260ff16815481101561000057906000526020600020900160005b9054906101000a9004600160a060020a0316905080600160a060020a031663402a791a846000604051602001526040518263ffffffff1660e060020a02815260040180828152602001915050602060405180830381600087803b156100005760325a03f115610000575050604051511515905061035457610000565b60408051600160a060020a03831681526001602082015281517fbfc3987a650877d0342b656d3aaa86c0e221c1bd7f662a3b461f63f5bd253493929181900390910190a15b6001909101906102ae565b60408051600160a060020a0380881682528616602082015280820185905290517fddd74195f19fb32d0e6a2e68148b6c4db972828802e24ffd13f400cc6aa18fc29181900360600190a15b5050505050565b60006020819052908152604090205481565b6002805480600101828181548183558181151161044a5760008381526020902061044a9181019083015b808211156104465760008155600101610432565b5090565b5b505050916000526020600020900160005b604051609a806104a483396040519101819003906000f0801561000057909190916101000a815481600160a060020a030219169083600160a060020a03160217905550505b56006060604052346000575b6083806100176000396000f300606060405263ffffffff60e060020a600035041663402a791a81146022575b6000565b34600057602f6004356043565b604080519115158252519081900360200190f35b600060648210156051575060015b5b9190505600a165627a7a72305820d5bd8d01d8e7467f12b3378366b99297aacabeb1e2eb1912a3052640ea63e77e0029a165627a7a72305820d455ad04774287448078f2d28a9a8a1e69be1332898f51564f46dcc13ee9b7d90029",
+  "networks": {
+    "1494629530316": {
+      "events": {
+        "0x9ce3a340df23cde71d68006650a793d9a666a5a1e96de66020fc8d3d15305efd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "producer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "AddStoredEnergy",
+          "type": "event"
+        },
+        "0xddd74195f19fb32d0e6a2e68148b6c4db972828802e24ffd13f400cc6aa18fc2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "producer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "consumer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TransferEnergy",
+          "type": "event"
+        },
+        "0xbfc3987a650877d0342b656d3aaa86c0e221c1bd7f662a3b461f63f5bd253493": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "validtor",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "isValid",
+              "type": "bool"
+            }
+          ],
+          "name": "TxValidation",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x7e624c4481d8a825826fcb5cc765198c8ceafcb5",
+      "updated_at": 1494649316704
+    },
+    "1494649562767": {
+      "events": {
+        "0x9ce3a340df23cde71d68006650a793d9a666a5a1e96de66020fc8d3d15305efd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "producer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "AddStoredEnergy",
+          "type": "event"
+        },
+        "0xddd74195f19fb32d0e6a2e68148b6c4db972828802e24ffd13f400cc6aa18fc2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "producer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "consumer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TransferEnergy",
+          "type": "event"
+        },
+        "0xbfc3987a650877d0342b656d3aaa86c0e221c1bd7f662a3b461f63f5bd253493": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "validtor",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "isValid",
+              "type": "bool"
+            }
+          ],
+          "name": "TxValidation",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xf4f5188698943bda29e2004ef8eb430d8dc77160",
+      "updated_at": 1494649582545
+    },
+    "1494649616306": {
+      "events": {
+        "0x9ce3a340df23cde71d68006650a793d9a666a5a1e96de66020fc8d3d15305efd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "producer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "AddStoredEnergy",
+          "type": "event"
+        },
+        "0xddd74195f19fb32d0e6a2e68148b6c4db972828802e24ffd13f400cc6aa18fc2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "producer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "consumer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TransferEnergy",
+          "type": "event"
+        },
+        "0xbfc3987a650877d0342b656d3aaa86c0e221c1bd7f662a3b461f63f5bd253493": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "validtor",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "isValid",
+              "type": "bool"
+            }
+          ],
+          "name": "TxValidation",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x480782117346fa68e6a0256704690269fd5e107f",
+      "updated_at": 1494649955876
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1494649955876
+}
